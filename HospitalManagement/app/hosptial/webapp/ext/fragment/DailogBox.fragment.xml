@@ -1,12 +1,18 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
-    <VBox core:require="{ handler: 'hosptial/ext/fragment/DailogBox' }">
-        <!-- Both buttons use the same handler object -->
-        <Button text="Open Dialog (1)" press="handler.onPress" />
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog id="PatientDialog" title="Patient Details" contentWidth="30rem">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Input id="inpName" placeholder="Patient Name" liveChange="onFieldChange" />
+        <Input id="inpAge" placeholder="Patient Age" type="Number" liveChange="onFieldChange" />
+        <Input id="inpPhone" placeholder="Phone (10 digits)" liveChange="onFieldChange" />
+      </VBox>
+    </content>
 
-        <Button
-            text="Open Dialog (2)"
-            width="230px"
-            press="handler.onDefaultDialogPress"
-            class="sapUiSmallMarginBottom" />
-    </VBox>
+    <buttons>
+      <!-- hidden until validation passes -->
+      <Button id="btnSave" text="Save" type="Emphasized" press="onSavePress" visible="false" />
+      <Button id="btnDraft" text="Draft" press="onDraftPress" visible="false" />
+      <Button text="Cancel" press="onCancelPress" />
+    </buttons>
+  </Dialog>
 </core:FragmentDefinition>

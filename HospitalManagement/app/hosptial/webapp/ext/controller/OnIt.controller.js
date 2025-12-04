@@ -13,7 +13,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 				var oModel = this.base.getExtensionAPI().getModel();
-				//debugger
+				debugger
 			},
 			// editFlow: {
 			// 	onBeforeEdit: async function () {
